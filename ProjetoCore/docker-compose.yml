@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  projeto-core-container:
+    image: projeto-core
+    build:
+      context: . #Caminho do build do dockerfile
+    ports:
+      - "44326:80"
+
+    networks:
+      - projeto-core-network
+
+networks:
+  projeto-core-network:
+    driver: bridge
